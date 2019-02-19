@@ -106,7 +106,7 @@ class LEOrder
 			if (filter_var($this->orderURL, FILTER_VALIDATE_URL))
 			{
 				$get = $this->connector->get($this->orderURL);
-				if(strpos($get['header'], "200 OK") !== false)
+				if(strpos($get['header'], "200 OK") !== false && $get['body']['status'] != "invalid")
 				{
 					$orderdomains = array_map(function($ident) { return $ident['value']; }, $get['body']['identifiers']);
 					$diff = array_merge(array_diff($orderdomains, $domains), array_diff($domains, $orderdomains));
@@ -483,7 +483,7 @@ class LEOrder
             'HOME = .
 			RANDFILE = $ENV::HOME/.rnd
 			[ req ]
-			default_bits = 4096
+			default_bits = ' . $this->keySize . '
 			default_keyfile = privkey.pem
 			distinguished_name = req_distinguished_name
 			req_extensions = v3_req
@@ -509,7 +509,7 @@ class LEOrder
      */
 	public function finalizeOrder($csr = '')
 	{
-		if($this->status == 'pending')
+		if($this->status == 'pending' || $this->status == 'ready')
 		{
 			if($this->allAuthorizationsValid())
 			{
