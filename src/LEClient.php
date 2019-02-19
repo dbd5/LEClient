@@ -1,18 +1,11 @@
 <?php
 
-/**
- * Load the dependencies for the LetsEncrypt Client
- */
-require_once('src/LEConnector.php');
-require_once('src/LEAccount.php');
-require_once('src/LEOrder.php');
-require_once('src/LEAuthorization.php');
-require_once('src/LEFunctions.php');
+namespace LEClient;
 
 /**
  * Main LetsEncrypt Client class, works as a framework for the LEConnector, LEAccount, LEOrder and LEAuthorization classes.
  *
- * PHP version 7.1.0
+ * PHP version 5.2.0
  *
  * MIT License
  *
@@ -39,7 +32,7 @@ require_once('src/LEFunctions.php');
  * @author     Youri van Weegberg <youri@yourivw.nl>
  * @copyright  2018 Youri van Weegberg
  * @license    https://opensource.org/licenses/mit-license.php  MIT License
- * @version    1.1.1
+ * @version    1.1.4
  * @link       https://github.com/yourivw/LEClient
  * @since      Class available since Release 1.0.0
  */
