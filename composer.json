@@ -1,7 +1,7 @@
 {
-    "name": "yourivw/leclient",
+    "name": "dbd5/leclient",
     "type": "library",
-    "description": "PHP LetsEncrypt client library for ACME v2",
+    "description": "PHP LetsEncrypt client library for ACME v2 (clone of )",
     "license": "MIT",
     "require": {
         "php": ">=5.2"
