@@ -41,7 +41,6 @@ class LEClient
 	const LE_PRODUCTION = 'https://acme-v02.api.letsencrypt.org';
 	const LE_STAGING = 'https://acme-staging-v02.api.letsencrypt.org';
 
-	private $certificatesKeys;
 	private $accountKeys;
 
 	private $connector;
@@ -87,7 +86,7 @@ class LEClient
 
 		if (is_string($accountKeys))
 		{
-			$accountKeys = $certificateKeysDir.'/'.$accountKeys;
+			$accountKeys = $certificateKeys.'/'.$accountKeys;
 
 			if(!file_exists($accountKeys))
 			{
@@ -146,8 +145,6 @@ class LEClient
     {
         if (is_string($certificateKeys))
         {
-            $certificateKeysDir = $certificateKeys;
-
             if(!file_exists($certificateKeys))
             {
                 mkdir($certificateKeys, 0777, true);
