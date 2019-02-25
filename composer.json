@@ -2,8 +2,9 @@
     "name": "dbd5/leclient",
     "type": "library",
     "description": "PHP LetsEncrypt client library for ACME v2 (clone of KnightAR/LEClient)",
+    "version": "1.1.4",
     "license": "MIT",
-    "version": "1.1.4a",
+    "minimum-stability": "dev",
     "require": {
         "php": ">=5.2"
     },
@@ -11,11 +12,5 @@
         "psr-4": {
             "LEClient\\": "src/"
         }
-    },
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/dbd5/leclient"
-        }
-    ]
+    }
 }
